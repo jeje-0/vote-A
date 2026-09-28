@@ -50,7 +50,9 @@
   .bar-track{margin:16px auto 0;max-width:340px;height:8px;border-radius:999px;
     background:rgba(30,86,54,0.15);overflow:hidden;}
   .bar-fill{height:100%;background:var(--green);border-radius:999px;transition:width .4s ease;}
-
+ .tree-deco{position:absolute;right:-30px;bottom:-10px;width:190px;height:auto;
+    opacity:0.35;pointer-events:none;z-index:1;}
+  
   .panel{background:var(--cream);border-radius:28px 28px 0 0;margin-top:-40px;
     padding:32px 24px 48px;position:relative;box-shadow:0 -6px 24px rgba(0,0,0,0.06);}
   .panel h2{font-size:19px;margin:0 0 6px;font-weight:800;}
@@ -121,7 +123,9 @@
     .desc{max-width:560px;font-size:17px;}
     .pill-center span{font-size:18px;padding:12px 28px;}
     .stat .num{font-size:60px;}
-
+  .tree-deco{width:1300px;right:calc(50% - 400px);bottom:-20px;}
+    .wordmark-img{margin-top:36px;height:14px;}
+    
     .panel{max-width:640px;margin-left:auto;margin-right:auto;
       border-radius:28px;margin-top:-50px;padding:40px 40px 56px;}
   }
@@ -144,6 +148,9 @@
       <div class="label">참여 현황</div>
       <div class="bar-track"><div class="bar-fill" id="barFill" style="width:0%"></div></div>
     </div>
+ <img src="assets/wordmark.png" alt="INTER-VARSITY CHRISTIAN FELLOWSHIP" class="wordmark-img">
+    
+    <img src="assets/tree.png" alt="" class="tree-deco">
   </div>
 
   <div class="panel">
