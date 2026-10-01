@@ -36,7 +36,7 @@ function buildTable(data){
   GROUP_ORDER.forEach(g => {
     const p = groupParticipants[g] ?? 0;
     const yes = groupTotals[g] ? groupTotals[g].찬성 : 0;
-    summaryRow.innerHTML += `<th class="summary-head" colspan="${CHOICE_ORDER.length}">${p}총 명 참여 / 찬성 ${yes}표</th>`;
+    summaryRow.innerHTML += `<th class="summary-head" colspan="${CHOICE_ORDER.length}">총 ${p} 명 참여 / 찬성 ${yes}표</th>`;
   });
   const totalYesAll = GROUP_ORDER.reduce((s, g) => s + (groupTotals[g] ? groupTotals[g].찬성 : 0), 0);
   summaryRow.innerHTML += `<th class="summary-head total-group" colspan="${CHOICE_ORDER.length}">전체 ${data.count}명 / 찬성 ${totalYesAll}표</th>`;
