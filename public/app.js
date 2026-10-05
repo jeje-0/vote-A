@@ -126,7 +126,7 @@ async function loadCount(){
     const pct = Math.min(100, Math.round((data.count / data.total) * 100));
     document.getElementById('barFill').style.width = pct + '%';
 
-    if(!TEST_MODE && data.count >= data.total && localStorage.getItem('ivf_vote_submitted') !== 'true'){
+    if(data.count >= data.total && localStorage.getItem('ivf_vote_submitted') !== 'true'){
       const btn = document.getElementById('submitBtn');
       btn.disabled = true;
       btn.textContent = '투표 마감';
