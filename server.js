@@ -6,8 +6,8 @@ const PORT = process.env.PORT || 3000;
 const ADMIN_KEY = process.env.ADMIN_KEY || 'ivf2026admin';
 const DATA_FILE = path.join(__dirname, 'votes.json');
 const PUBLIC_DIR = path.join(__dirname, 'public');
-const CANDIDATES = ['김길동', '이길동', '박길동']; // 후보 이름은 여기서 수정하세요
-const TOTAL_TARGET = 75;
+const CANDIDATES = ['강옥림', '권오윤', '한삼전']; // 후보 이름은 여기서 수정하세요
+const TOTAL_TARGET = 10;
 
 // 테스트 모드: TEST_MODE=1 로 실행하면 기기당 1표 제한과 목표 인원 마감이 꺼집니다.
 // 실제 투표 때는 이 환경변수를 지우거나 0으로 두세요.
