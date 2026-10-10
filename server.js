@@ -208,12 +208,12 @@ function handleVote(req, res) {
       const votes = await readVotes();
 
       // 기기당 1표: 같은 기기 토큰으로 이미 제출된 표가 있으면 거부
-      if (!TEST_MODE && votes.some((v) => v.deviceToken === deviceToken)) {
+      if (votes.some((v) => v.deviceToken === deviceToken)) {
         return sendJson(res, 409, { ok: false, error: '이미 이 기기에서 투표하셨습니다.' });
       }
 
       // 목표 인원(TOTAL_TARGET)을 채웠으면 더 이상 받지 않음
-      if (!TEST_MODE && votes.length >= TOTAL_TARGET) {
+      if (votes.length >= TOTAL_TARGET) {
         return sendJson(res, 403, { ok: false, error: `목표 인원(${TOTAL_TARGET}명) 투표가 모두 마감되었습니다.` });
       }
 
