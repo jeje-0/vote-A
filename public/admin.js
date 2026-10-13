@@ -45,7 +45,7 @@ function buildTable(data){
   const table = document.getElementById('resultsTable');
   table.innerHTML = '';
   const legend = document.getElementById('legendText');
-  if(legend) legend.textContent = '※ 당선 기준: ' + conditionText() + ' (각 재적 인원의 절반을 넘는 찬성) 조건을 모두 충족해야 당선입니다. 초록 ✓는 해당 기준의 과반 달성 표시입니다.';
+  if(legend) legend.textContent = '※ 통과 기준: ' + conditionText() + ' (각 재적 인원의 절반을 넘는 찬성) 조건을 모두 충족해야 통과입니다. 초록 ✓는 해당 기준의 과반 달성 표시입니다.';
 
   const groupParticipants = data.groupParticipants || {};
   const enrolled = data.enrolled || {};
@@ -130,7 +130,7 @@ function buildTable(data){
     if(conds.some(x => !x.need)){
       result = `<span class="badge wait">재적 입력 필요</span>`;
     }else if(conds.every(x => x.yes >= x.need)){
-      result = `<span class="badge win">당선</span>`;
+      result = `<span class="badge win">통과</span>`;
     }else{
       const lacks = conds.filter(x => x.yes < x.need).map(x => x.label + ' ' + (x.need - x.yes) + '표 부족');
       result = `<span class="badge lose">미달</span><small class="need-more">${lacks.join(' · ')}</small>`;
