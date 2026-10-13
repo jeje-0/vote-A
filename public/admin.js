@@ -24,7 +24,7 @@ async function tryLoad(){
 }
 
 // 과반 기준: 재적 인원의 절반을 넘는 찬성표 (재적 5명 -> 3표, 재적 4명 -> 3표)
-const SECRETARY_GROUP = '간사';
+const SECRETARY_GROUP = ['간사' , '이사'];
 function majorityNeed(enrolled){
   return enrolled > 0 ? Math.floor(enrolled / 2) + 1 : 0;
 }
